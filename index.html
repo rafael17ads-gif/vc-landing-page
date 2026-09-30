@@ -225,6 +225,33 @@
     .diff-grid, .diff-row3{grid-template-columns:1fr;}
   }
 
+  /* ---------- soluções ---------- */
+  .sol-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .sol-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:16px;
+    padding:22px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:10px;
+    text-decoration:none; color:var(--ink); transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .sol-card:hover{transform:translateY(-3px); border-color:var(--blue); box-shadow:0 4px 10px rgba(18,33,58,.08), 0 16px 32px rgba(18,33,58,.10);}
+  .sol-card .ico{
+    width:40px; height:40px; border-radius:11px; background:var(--surface-2);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .sol-card .ico svg{width:20px; height:20px; stroke:var(--blue-deep);}
+  :root[data-theme="dark"] .sol-card .ico svg, @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sol-card .ico svg{stroke:var(--yellow-ink);}}
+  .sol-card h3{font-size:15.5px;}
+  .sol-card p{font-size:13.5px; color:var(--ink-dim); flex:1;}
+  .sol-card .sol-cta{
+    font-size:12.5px; font-weight:700; color:var(--blue-deep); display:inline-flex;
+    align-items:center; gap:5px; margin-top:2px;
+  }
+  :root[data-theme="dark"] .sol-card .sol-cta, @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sol-card .sol-cta{color:var(--yellow-ink);}}
+  .sol-card .sol-cta svg{width:13px; height:13px; transition:transform .15s ease;}
+  .sol-card:hover .sol-cta svg{transform:translateX(3px);}
+  .sol-note{font-size:13px; color:var(--ink-dim); margin-top:18px;}
+  @media (max-width:880px){ .sol-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .sol-grid{grid-template-columns:1fr;} }
+
   /* ---------- quem atendemos ---------- */
   .aud-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
   .aud-card{
@@ -303,6 +330,7 @@
     <nav class="main">
       <a href="#inicio">Início</a>
       <a href="#como-funciona">Como Funciona</a>
+      <a href="#solucoes">Soluções</a>
       <a href="#diferenciais">Diferenciais</a>
       <a href="#quem-atendemos">Quem Atendemos</a>
       <a href="#contato">Contato</a>
@@ -390,6 +418,45 @@
           <span class="foot">Consistência no longo prazo</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="plain" id="solucoes">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">O que a #VC resolve pra você</span>
+          <h2>Nossas soluções</h2>
+        </div>
+        <p>Cada frente do hub #VC com um link direto — clica e já chama a gente no WhatsApp sobre o que precisa.</p>
+      </div>
+      <div class="sol-grid">
+        <a class="sol-card" href="https://wa.me/5528999929077?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20e%20quero%20saber%20mais%20sobre%20a%20Gest%C3%A3o%20de%20Marketing%20da%20%23VC." target="_blank" rel="noopener">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h10M7 12h6"/></svg></div>
+          <h3>Gestão de Marketing</h3>
+          <p>Cuidamos da sua marca de ponta a ponta — planejamento, redes sociais, conteúdo e ações offline, tudo com relatório mensal.</p>
+          <span class="sol-cta">Falar sobre isso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="sol-card" href="https://wa.me/5528999929077?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20e%20quero%20saber%20mais%20sobre%20Identidade%20Visual%20%28logotipo%29." target="_blank" rel="noopener">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17M3.5 12h17"/></svg></div>
+          <h3>Identidade Visual</h3>
+          <p>Logotipo e identidade de marca com a Alves IDV, nosso estúdio parceiro dentro do hub.</p>
+          <span class="sol-cta">Falar sobre isso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="sol-card" href="https://wa.me/5528999929077?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20e%20quero%20saber%20mais%20sobre%20o%20Google%20Meu%20Neg%C3%B3cio." target="_blank" rel="noopener">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg></div>
+          <h3>Google Meu Negócio</h3>
+          <p>Seu negócio configurado e otimizado pra aparecer no Google Maps e nas buscas locais.</p>
+          <span class="sol-cta">Falar sobre isso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="sol-card" href="https://wa.me/5528999929077?text=Ol%C3%A1%21%20Vim%20pela%20landing%20page%20e%20quero%20saber%20mais%20sobre%20Landing%20Page%20Sob%20Medida." target="_blank" rel="noopener">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M3 8.5h18M7 13h6"/></svg></div>
+          <h3>Landing Page Sob Medida</h3>
+          <p>Uma página própria na internet, feita pro seu negócio — pronta até pra tráfego pago.</p>
+          <span class="sol-cta">Falar sobre isso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+      <p class="sol-note">Todas as soluções fazem parte do hub #VC — cada uma cuidada pela frente certa, sempre com a mesma gestão por trás.</p>
     </div>
   </section>
 
@@ -493,6 +560,7 @@
         <h4>Navegação</h4>
         <ul>
           <li><a href="#como-funciona">Como Funciona</a></li>
+          <li><a href="#solucoes">Soluções</a></li>
           <li><a href="#diferenciais">Diferenciais</a></li>
           <li><a href="#quem-atendemos">Quem Atendemos</a></li>
           <li><a href="#contato">Contato Direto</a></li>
